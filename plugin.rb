@@ -35,14 +35,15 @@ class Onebox::Engine::Go7Onebox
   end
   
   def to_html
-    if type == 'audio'
+    content_type = type
+    if content_type == 'audio'
       return %{
         <audio controls="">
           <source src="https://go7.ir/i/#{id}">
           <a href="https://go7.ir/i/#{id}" rel="nofollow noopener">https://go7.ir/i/#{id}</a>
         </audio>
       }
-    elsif type == 'video'
+    elsif content_type == 'video'
       return %{
         <div class="onebox video-onebox">
           <video width="100%" height="100%" controls="">
