@@ -53,7 +53,7 @@ class Onebox::Engine::PlaysTVOnebox
       }
     elsif type == 'image'
       return %{
-        <p><img src="https://go7.ir/i/#{id}}" style="max-width:100% !important" class="d-lazyload"></img></p>
+        <p><img src="https://go7.ir/i/#{id}" style="max-width:100% !important" class="d-lazyload"></img></p>
       }
     else
       return %{
@@ -62,5 +62,5 @@ class Onebox::Engine::PlaysTVOnebox
         </div>
       }
     end
-	end
+  end
 end 
