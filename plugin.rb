@@ -17,7 +17,7 @@ class Onebox::Engine::GoIrOnebox
     0
   end
   
-  REGEX = /^https?:\/\/go7.ir\/i\/(\d+)/
+  REGEX = /^https?:\/\/go7.ir\/[^\d]*(\d+).*/
   matches_regexp REGEX
 
   def id
