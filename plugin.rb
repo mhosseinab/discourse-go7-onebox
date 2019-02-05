@@ -6,9 +6,15 @@
 
 require 'net/http'
 
+Onebox = Onebox
+
 class Onebox::Engine::Go7Onebox
   include Onebox::Engine
-
+  
+  def self.priority
+    0
+  end
+  
   REGEX = /^https?:\/\/go7.ir\/i\/(\d+)/
   matches_regexp REGEX
 
