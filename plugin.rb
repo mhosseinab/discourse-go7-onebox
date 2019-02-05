@@ -1,3 +1,5 @@
+#!/bin/env ruby
+# encoding: utf-8
 # name: Discourse Go7 Onebox
 # about: Adds support for embedding Go7.ir media within Discourse.
 # version: 0.1
@@ -8,7 +10,7 @@ require 'net/http'
 
 Onebox = Onebox
 
-class Onebox::Engine::Go7Onebox
+class Onebox::Engine::GoIrOnebox
   include Onebox::Engine
   
   def self.priority
