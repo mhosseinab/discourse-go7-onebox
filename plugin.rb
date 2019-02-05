@@ -21,7 +21,6 @@ class Onebox::Engine::Go7Onebox
       http.get("/i/#{id}")
     }
     ext = File.extname(res['location'])
-    puts ext
     if ['.mp4'].include? ext
       return 'video'
     elsif ['.mp3','.oga'].include? ext
@@ -36,7 +35,6 @@ class Onebox::Engine::Go7Onebox
   end
   
   def to_html
-    puts id
     if type == 'audio'
       return %{
         <audio controls="">
