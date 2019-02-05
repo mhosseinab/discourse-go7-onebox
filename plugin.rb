@@ -6,14 +6,14 @@
 
 require 'net/http'
 
-class Onebox::Engine::PlaysTVOnebox
-	include Onebox::Engine
+class Onebox::Engine::Go7Onebox
+  include Onebox::Engine
 
-	REGEX = /^https?:\/\/go7.ir\/i\/(\d+)/
-	matches_regexp REGEX
+  REGEX = /^https?:\/\/go7.ir\/i\/(\d+)/
+  matches_regexp REGEX
 
-	def id
-		@url.match(REGEX)[1]
+  def id
+    @url.match(REGEX)[1]
   end
   
   def type
@@ -21,6 +21,7 @@ class Onebox::Engine::PlaysTVOnebox
       http.get("/i/#{id}")
     }
     ext = File.extname(res['location'])
+    puts ext
     if ['.mp4'].include? ext
       return 'video'
     elsif ['.mp3','.oga'].include? ext
@@ -33,8 +34,9 @@ class Onebox::Engine::PlaysTVOnebox
       return 'other'
     end
   end
-	
+  
   def to_html
+    puts id
     if type == 'audio'
       return %{
         <audio controls="">
