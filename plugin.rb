@@ -28,15 +28,24 @@ class Onebox::Engine::GoIrOnebox
     res = Net::HTTP.start('go7.ir', '80') {|http|
       http.get("/i/#{id}")
     }
+    
+    if !res['location']
+      return false
+    end
+    
     ext = File.extname(res['location'])
     if ['.mp4'].include? ext
       return 'video'
+    
     elsif ['.mp3','.oga'].include? ext
       return 'audio'
+    
     elsif ['.pdf','.doc','.docx'].include? ext
       return 'documet'
+    
     elsif ['.jpg','.jpeg','.gif','.png'].include? ext
       return 'image'
+    
     else
       return 'other'
     end
@@ -44,6 +53,11 @@ class Onebox::Engine::GoIrOnebox
   
   def to_html
     content_type = type
+    
+    if !content_type
+      return "[Invalid link!]"
+    end
+    
     if content_type == 'audio'
       return %{
         <audio controls="">
@@ -53,7 +67,7 @@ class Onebox::Engine::GoIrOnebox
       }
     elsif content_type == 'video'
       return %{
-        <div class="onebox video-onebox">
+        <div class="onebox video-onebox go7-onebox">
           <video width="100%" height="100%" controls="">
             <source src="https://go7.ir/i/#{id}">
             <a href="https://go7.ir/i/#{id}" rel="noopener">https://go7.ir/i/#{id}</a>
@@ -66,7 +80,7 @@ class Onebox::Engine::GoIrOnebox
       }
     else
       return %{
-        <div class="onebox">
+        <div class="onebox go7-onebox">
           <a href="https://go7.ir/i/#{id}" rel="noopener">https://go7.ir/i/#{id}</a>
         </div>
       }
