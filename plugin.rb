@@ -54,10 +54,6 @@ class Onebox::Engine::GoIrOnebox
   def to_html
     content_type = type
     
-    if !content_type
-      return "[Invalid link!]"
-    end
-    
     if content_type == 'audio'
       return %{
         <audio controls="">
