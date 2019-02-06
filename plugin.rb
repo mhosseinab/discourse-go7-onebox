@@ -81,7 +81,7 @@ class Onebox::Engine::GoIrOnebox
     else
       return %{
         <div class="onebox go7-onebox">
-          <a href="https://go7.ir/i/#{id}" rel="noopener">https://go7.ir/i/#{id}</a>
+          <a class="attachment" href="https://go7.ir/i/#{id}" rel="noopener">https://go7.ir/i/#{id}</a>
         </div>
       }
     end
