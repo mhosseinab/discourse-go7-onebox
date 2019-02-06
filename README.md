@@ -3,7 +3,7 @@ This plugin for Discourse, extends Onebox to add support for embedding media fro
 
 ## Demo
 
-See it in action and test it out for yourself on [freepaper community](https://community.freepaper.me/?utm_source=github.com&utm_medium=readme&utm_term=demo&utm_content=discourse-aparat-onebox&utm_campaign=development).
+See it in action and test it out for yourself on [freepaper community](https://community.freepaper.me/?utm_source=github.com&utm_medium=readme&utm_term=demo&utm_content=discourse-go7-onebox&utm_campaign=development).
 
 ## Installation
 
