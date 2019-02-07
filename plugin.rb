@@ -33,7 +33,7 @@ class Onebox::Engine::GoIrOnebox
       return false
     end
     
-    ext = File.extname(res['location'])
+    ext = File.extname(res['location']).downcase
     if ['.mp4'].include? ext
       return 'video'
     
