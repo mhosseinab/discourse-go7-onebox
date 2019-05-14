@@ -45,4 +45,4 @@ rake posts:rebake
 
 ## License
 
-The Discourse Plays.tv Onebox plugin is released under the [MIT License](LICENSE).
+The Discourse Go7 Onebox plugin is released under the [MIT License](LICENSE).
